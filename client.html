@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Health Wallet</title>
+<style>
+    .p1{background-image: url('pd.jpg');
+    color: rgb(92, 92, 239);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        }
+</style>
+</head>
+<body class="p1">
+    <h1>Patient Dashboard Registration</h1><br>
+    <p>Enter your details to register for the Digital Health Wallet. Digital Health Wallet is an online platform used by doctors to access general
+    information and past history of patients via web app.It was made and developed especially for the rural area where network is not feasible.</p>
+    <font size="5">
+    <form id="registrationForm">
+        <table align="center" cellpadding="10" >
+            <br><br>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name" required></td>
+                
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" id="email" required></td>
+            </tr>
+            <tr>
+                <td>Phone Number:</td>
+                <td><input type="tel" id="phone" required></td>
+
+            </tr>
+            <tr>
+                <td>Date of Birth:</td>
+                <td><input type="date"  required></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="male" checked>Male
+                    <input type="radio" name="gender" value="female">Female
+                    <input type="radio" name="gender" value="other">Other
+                </td>
+            </tr>
+            <tr>
+                <td>Region:</td>
+                <td><textarea name="region" rows="4" cols="50" placeholder="Enter your address here..." required></textarea>
+            </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><button type="submit">Register</button></td>
+
+            </tr>
+        </table>
+    </form>
+    </font><br><br>
+    <div>
+     <img src="r1.jpeg" height="300" width="490"/>   
+     <img src="r2.jpeg" height="300" width="490"/>   
+     <img src="r3.jpeg" height="300" width="490"/>    
+    </div>
+    
+    <div>
+     <img src="r4.jpeg" height="300" width="490"/>   
+     <img src="r5.jpeg" height="300" width="490"/>   
+     <img src="r2.jpeg" height="300" width="490"/>    
+    </div>
+    <button onclick="window.location.href='index.html'">Back to Home</button></center>
+
+    <footer><center><font size="4">Copyright © 2024 Digital Health Wallet. All rights reserved.</font></center>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>add_record</title>
+    <style>
+    .p2{background-image: url('ar.jpg');
+    color: rgb(4, 5, 5);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        }
+</style>
+</head>
+<body class="p2">
+    <center><font size= "5"><h1>Add Patient Record</h1></font></center><br>  
+    <center><font size="5"><p>Enter patient information to add a new record. Add all their details here.</p></font>
+    <form id="addRecordForm">
+        <table align="center" cellpadding="10"style="font-size: 20px;">
+            <tr>
+                <td>UHID:</td>
+                <td><input type="text" id="uhid" required></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name" required></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" id="age" required></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>    
+                    <input type="radio" name="gender" value="male" checked>Male     
+                    <input type="radio" name="gender" value="   female">Female
+                    <input type="radio" name="gender" value="other">Other
+                </td>
+            </tr>
+            <tr>
+                <td>Symptoms:</td>
+                <td><textarea name="symptoms" rows="4" cols="50" placeholder="Enter symptoms details here..." required></textarea></td>
+            </tr>
+            <tr>
+                <td>Diagnosis:</td>
+                <td><textarea name="diagnosis" rows="4" cols="50" placeholder="Enter diagnosis details here..." required></textarea></td>
+            </tr>
+            <tr>
+                <td>Prescriptions:</td>
+                <td><textarea name="prescriptions" rows="4" cols="50" placeholder="Enter prescription details here..." required></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><button type="submit">Add Record</button></td>
+            </tr>
+        </table>   
+    <button onclick="window.location.href='doctor.html'">Back to Doctor Portal</button></center>
+        <footer><center><font size="4">Copyright © 2024 Digital Health Wallet. All rights reserved.</font></center>
+</body>
+</html>

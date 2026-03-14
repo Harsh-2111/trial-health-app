@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="HealthApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Doctor Portal</title>
+    <style>
+        .p5 { background-image: url('doc.jpeg'); background-size: cover; background-position: center; height: 100vh; }
+        .patient-card { background: white; color: black; padding: 20px; border-radius: 15px; margin-top: 20px; max-width: 500px; }
+    </style>
+</head>
+<body class="p5" ng-controller="MainController" ng-init="checkAuth()">
+    <center>
+        <h1 style="color: black;">Welcome, {{currentDoctor}}</h1>
+        <p style="color: black;">Access patient information and manage appointments.</p>
+        
+        <input type="text" id="searchUHID" ng-model="searchID" placeholder="Enter UHID to search records" required>
+        <br>
+        <button ng-click="searchPatient()">Search</button>
+
+        <div ng-if="foundPatient" class="patient-card">
+            <h3>Patient Record Found:</h3>
+            <hr>
+            <p><strong>Name:</strong> {{foundPatient.name}}</p>
+            <p><strong>Age:</strong> {{foundPatient.age}}</p>
+            <p><strong>Last Diagnosis:</strong> {{foundPatient.diagnosis}}</p>
+        </div>
+        
+        <br><br><br>
+        <button onclick="window.location.href='add_record.html'">Add New Patient Record</button><br><br><br>
+        <button ng-click="logout()">Logout</button>
+    </center>
+<br><br>
+    <footer><center><b><font style="color: black;">Copyright © 2024 Digital Health Wallet. All rights reserved.</b></center></footer>
+</body>
+</html>     
