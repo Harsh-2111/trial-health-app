@@ -3,40 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success - Digital Health Wallet</title>
+    
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="app.js"></script>
-    <title>Registration Success - DHW</title>
+
+    <style>
+        .success-container {
+            background: #f7c5c5;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 550px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #04AA6D;
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+
+        .uhid-label {
+            font-weight: 600;
+            color: #666;
+            margin-top: 25px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .uhid-badge {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            padding: 15px 30px;
+            border-radius: 12px;
+            display: inline-block;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+            letter-spacing: 4px;
+        }
+
+        .instructions {
+            background-color: #ee05cb;
+            border-left: 4px solid #f4060a;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            color: #faf6ec;
+            text-align: left;
+        }
+
+
+    </style>
 </head>
-<body class="p1" ng-controller="MainController" style="text-align: center; justify-content: center; display: flex; flex-direction: column; align-items: center;">
-    
-    <div id="registrationForm" style="margin-top: 50px; background: rgba(255, 255, 255, 0.95); color: black; max-width: 500px;">
-        <h1 style="color: #04AA6D; text-shadow: none; font-size: 2rem;">Registration Successful!</h1>
-        <hr style="border: 0.5px solid #ccc; margin: 20px 0;">
+<body ng-controller="MainController">
+
+    <main class="success-container">
+        <h1>Registration Successful!</h1>
+        <p>Welcome to the <strong>Digital Health Wallet</strong>. Your account has been created and your unique identity is ready.</p>
         
-        <p style="text-align: center; font-size: 1.1rem; color: #333;">Welcome to the Digital Health Wallet. Your unique ID has been generated successfully.</p>
-        
-        <div style="margin: 30px 0;">
-            <p style="font-weight: bold; margin-bottom: 10px; color: #555;">Your Unique Health ID (UHID):</p>
-            <div style="font-size: 3.5rem; font-weight: bold; color: white; background: linear-gradient(135deg, #007bff, #00d2ff); padding: 20px 40px; border-radius: 15px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2); letter-spacing: 5px;">
-                {{ displayUHID }}
-            </div>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+
+        <p class="uhid-label">Your Unique Health ID (UHID)</p>
+        <div class="uhid-badge">
+            {{ displayUHID }}
         </div>
 
-        <p style="font-size: 0.9rem; color: #666; padding: 0 10px;">
-            <strong>Important:</strong> Please take a screenshot or note down this number. You will need it to access your records at any clinic using the DHW system.
-        </p>
+        <div class="instructions">
+            <strong>Important:</strong> Please take a screenshot or write this number down. This ID is required to access your medical records at any participating clinic.
+        </div>
         
-        <br>
-        <button onclick="window.location.href='index.html'" style="max-width: 250px;">Return to Home</button>
-    </div>
-
-    <footer style="margin-top: 30px;">
-        <center><p style="color: white; font-size: 0.9rem;">Copyright © 2024 Digital Health Wallet.</p></center>
-    </footer>
-    <br><br>
+        <button onclick="window.location.href='index.html'">
+            Return to Dashboard
+        </button>
+    </main>
+    <br>
     <footer><center><b><font style="color: black;">Copyright © 2026 Digital Health Wallet. All rights reserved.</b></center></footer>
-        Designed and Developed by Nishtha Ghatiya,Pratha Patel and Harsh Savalia<br><center> 📍SVKM's NMIMS,Shirpur.</center>
-        
+    Designed and Developed by Nishtha Ghatiya,Pratha Patel and Harsh Savalia<br><center> 📍SVKM's NMIMS,Shirpur.</center>
 </body>
 </html>
