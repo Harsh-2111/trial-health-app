@@ -2,10 +2,10 @@ var app = angular.module('HealthApp', []);
 app.controller('MainController', function($scope, $window) {
     $scope.doctors = [
         {name: 'Dr. Harsh Savalia', username: 'harsh', password: 'pass123'},
-        {name: 'Dr. Smith', username: 'khush', password: 'khush123'},
-        {name: 'Dr. Anjali', username: 'naiya', password: 'naiya123'},
-        {name: 'Dr. Rajesh', username: 'raj', password: 'raj123'},
-        {name: 'Dr. Sarah', username: 'sara', password: 'sara123'}
+        {name: 'Dr. Khush', username: 'khush', password: 'khush123'},
+        {name: 'Dr. Naiya', username: 'naiya', password: 'naiya123'},
+        {name: 'Dr. Pratha', username: 'pratha', password: 'pratha123'},
+        {name: 'Dr. Nishtha', username: 'nishtha', password: 'nishtha123'}
     ];
 
     $scope.patients = JSON.parse(localStorage.getItem('patientData')) || [
