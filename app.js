@@ -8,8 +8,6 @@ app.controller('MainController', function($scope, $window) {
         {name: 'Dr. Sarah', username: 'sarah_k', password: 'health123'}
     ];
 
-    // 2. Data Persistence Logic
-    // This pulls existing records from the browser's storage so they don't disappear on refresh
     $scope.patients = JSON.parse(localStorage.getItem('patientData')) || [
         {uhid: '1001', name: 'Ramesh Kumar', age: 45, diagnosis: 'Mild Hypertension', symptoms: 'Dizziness', prescriptions: 'Amlodipine 5mg'}
     ];
@@ -35,6 +33,29 @@ app.controller('MainController', function($scope, $window) {
         $scope.currentDoctor = sessionStorage.getItem('doctorName');
     };
     $scope.newPatient = {}; 
+    $scope.registerPatient = function() {
+        let newUHID = Math.floor(1000 + Math.random() * 9000).toString();
+        
+        let patientInfo = {
+            uhid: newUHID,
+            name: $scope.regName,
+            email: $scope.regEmail,
+            phone: $scope.regPhone,
+            dob: $scope.regDob,
+            gender: $scope.regGender,
+            region: $scope.regRegion,
+            diagnosis: 'Pending First Visit', 
+            symptoms: 'N/A',
+            prescriptions: 'N/A'
+        };
+
+        let allPatients = JSON.parse(localStorage.getItem('patientData')) || [];
+        allPatients.push(patientInfo);
+        localStorage.setItem('patientData', JSON.stringify(allPatients));
+        localStorage.setItem('lastGeneratedUHID', newUHID);
+
+        $window.location.href = 'registration_success.html';
+    };
 
     $scope.addPatient = function() {
         // Add the new patient to the local array
@@ -54,6 +75,7 @@ app.controller('MainController', function($scope, $window) {
             alert("No patient found with UHID: " + $scope.searchID);
         }
     };
+    $scope.displayUHID = localStorage.getItem('lastGeneratedUHID');
     $scope.logout = function() {
         sessionStorage.clear();
         $window.location.href = 'login.html';
