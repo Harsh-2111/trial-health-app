@@ -16,27 +16,28 @@
 </style>
 </head>
 <body class="p1">
-    <h1>Patient Registration</h1>
-    <p style="padding: 0 15px;">Enter your details to register for the Digital Health Wallet.</p>
+    <h1>Patient Dashboard Registration</h1>
+    <p style="padding: 0 15px;">Enter your details to register for the Digital Health Wallet. Digital Health Wallet is an online platform used by doctors to access general
+    information and past history of patients via web app.It was made and developed especially for the rural area where network is not feasible.</p>
 
     <div id="registrationForm">
         <form id="registrationFormElement">
             <table align="center" cellpadding="10">
-                <tr><td>Name:</td><td><input type="text" id="name" required></td></tr>
+                <tr><td>Name:</td><td><input type="text" id="name" placeholer="Full Name" required></td></tr>
                 <tr><td>Email:</td><td><input type="email" id="email" required></td></tr>
-                <tr><td>Phone:</td><td><input type="tel" id="phone" required></td></tr>
+                <tr><td>Phone:</td><td><input type="tel" id="phone" placeholer="Valid Phone number"  required></td></tr>
                 <tr><td>DOB:</td><td><input type="date" required></td></tr>
                 <tr>
                     <td>Gender:</td>
                     <td>
-                        <input type="radio" name="gender" value="male" checked>M
-                        <input type="radio" name="gender" value="female">F
-                        <input type="radio" name="gender" value="other">O
+                        <input type="radio" name="gender" value="male" checked>Male
+                        <input type="radio" name="gender" value="female">Female
+                        <input type="radio" name="gender" value="other">Other
                     </td>
                 </tr>
                 <tr>
                     <td>Region:</td>
-                    <td><textarea name="region" rows="3" required></textarea></td>
+                    <td><textarea name="region" rows="3" placeholder="Enter your address here..." required></textarea></td>
                 </tr>
                 <tr><td colspan="2" align="center"><button type="submit">Register</button></td></tr>
             </table>
