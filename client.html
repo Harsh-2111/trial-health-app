@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="HealthApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
     <title>Registration - DHW</title>
 <style>
     .p1 {
         background-image: url('pd.jpg');
         background-size: cover;
         background-position: center;
-        min-height: 100vh; /* Changed to min-height */
+        min-height: 100vh;
         color: rgb(92, 92, 239);
     }
 </style>
 </head>
-<body class="p1">
+<body class="p1" ng-controller="MainController">
     <h1>Patient Dashboard Registration</h1>
     <p style="padding: 0 15px;">Enter your details to register for the Digital Health Wallet. Digital Health Wallet is an online platform used by doctors to access general
     information and past history of patients via web app.It was made and developed especially for the rural area where network is not feasible.</p>
 
     <div id="registrationForm">
+    <form ng-submit="registerPatient()">
         <form id="registrationFormElement">
             <table align="center" cellpadding="10">
                 <tr><td>Name:</td><td><input type="text" id="name"  required></td></tr>
