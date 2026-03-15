@@ -132,7 +132,8 @@ td {
 }
 
 input[type="text"], 
-input[type="number"], 
+input[type="number"],
+input[type="password"],
 input[type="email"], 
 input[type="tel"], 
 input[type="date"], 
@@ -148,7 +149,12 @@ textarea {
     filter: brightness(1.0);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+input[type="text"]:focus, 
+input[type="password"]:focus {
+    outline: none;
+    border-color: #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
 input:focus, textarea:focus {
     box-shadow: 0 0 10px rgba(10, 190, 235, 0.963);
 }
