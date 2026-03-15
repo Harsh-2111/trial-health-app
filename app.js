@@ -34,28 +34,41 @@ app.controller('MainController', function($scope, $window) {
     };
     $scope.newPatient = {}; 
     $scope.registerPatient = function() {
-        let newUHID = Math.floor(1000 + Math.random() * 9000).toString();
-        
-        let patientInfo = {
-            uhid: newUHID,
-            name: $scope.regName,
-            email: $scope.regEmail,
-            phone: $scope.regPhone,
-            dob: $scope.regDob,
-            gender: $scope.regGender,
-            region: $scope.regRegion,
-            diagnosis: 'Pending First Visit', 
-            symptoms: 'N/A',
-            prescriptions: 'N/A'
-        };
+    // 1. Get the existing patients from localStorage
+    let allPatients = JSON.parse(localStorage.getItem('patientData')) || [];
 
-        let allPatients = JSON.parse(localStorage.getItem('patientData')) || [];
-        allPatients.push(patientInfo);
-        localStorage.setItem('patientData', JSON.stringify(allPatients));
-        localStorage.setItem('lastGeneratedUHID', newUHID);
+    // 2. Check if the Aadhar number (regAadhar) already exists in the records
+    let existingPatient = allPatients.find(p => p.aadhar === $scope.regAadhar);
 
-        $window.location.href = 'registration_success.html';
+    if (existingPatient) {
+        // 3. If found, show an error and do not proceed
+        alert("Error: A patient with this Aadhar number is already registered with UHID: " + existingPatient.uhid);
+        return; // Stop the function here
+    }
+
+    // 4. If not found, generate the new UHID as usual
+    let newUHID = Math.floor(1000 + Math.random() * 9000).toString();
+    
+    let patientInfo = {
+        uhid: newUHID,
+        name: $scope.regName,
+        email: $scope.regEmail,
+        aadhar: $scope.regAadhar, // Store the Aadhar to check next time
+        phone: $scope.regPhone,
+        dob: $scope.regDob,
+        gender: $scope.regGender,
+        region: $scope.regRegion,
+        diagnosis: 'Pending First Visit', 
+        symptoms: 'N/A',
+        prescriptions: 'N/A'
     };
+
+    allPatients.push(patientInfo);
+    localStorage.setItem('patientData', JSON.stringify(allPatients));
+    localStorage.setItem('lastGeneratedUHID', newUHID);
+
+    $window.location.href = 'registration_success.html';
+};
 
     $scope.addPatient = function() {
         // Add the new patient to the local array
