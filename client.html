@@ -6,74 +6,119 @@
     <link rel="stylesheet" href="style.css">
     <title>Digital Health Wallet</title>
 <style>
-    .p1{background-image: url('pd.jpg');
-    color: rgb(92, 92, 239);
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('pd.jpg');
         background-size: cover;
-        background-position: center;
-        height: 100vh;
+        background-attachment: fixed;
+        color: #333;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9); /* Makes text readable over background */
+        border-radius: 10px;
+    }
+
+    /* Form Styling */
+    .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box; /* Ensures padding doesn't break width */
+    }
+
+    /* Responsive Image Gallery */
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .gallery img {
+        width: 100%; /* Full width on mobile */
+        max-width: 450px; /* Limits size on desktop */
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* Desktop adjustment */
+    @media (min-width: 768px) {
+        .form-group {
+            flex-direction: row;
+            align-items: center;
         }
- 
+        .form-group label {
+            width: 150px;
+        }
+        .form-group input {
+            flex: 1;
+        }
+        .gallery img {
+            width: 30%; /* Three images per row on desktop */
+        }
+    }
 </style>
-</head>
-<body class="p1">
-    <h1>Patient Dashboard Registration</h1><br>
-    <p>Enter your details to register for the Digital Health Wallet. Digital Health Wallet is an online platform used by doctors to access general
-    information and past history of patients via web app.It was made and developed especially for the rural area where network is not feasible.</p>
-    <font size="5">
-    <form id="registrationForm">
-        <table align="center" cellpadding="10" >
-            <br><br>
-            <tr>
-                <td>Name:</td>
-                <td><input type="text" id="name" required></td>
-                
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td><input type="email" id="email" required></td>
-            </tr>
-            <tr>
-                <td>Phone Number:</td>
-                <td><input type="tel" id="phone" required></td>
 
-            </tr>
-            <tr>
-                <td>Date of Birth:</td>
-                <td><input type="date"  required></td>
-            </tr>
-            <tr>
-                <td>Gender:</td>
-                <td>
-                    <input type="radio" name="gender" value="male" checked>Male
-                    <input type="radio" name="gender" value="female">Female
-                    <input type="radio" name="gender" value="other">Other
-                </td>
-            </tr>
-            <tr>
-                <td>Region:</td>
-                <td><textarea name="region" rows="4" cols="50" placeholder="Enter your address here..." required></textarea>
-            </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center"><button type="submit">Register</button></td>
+<body>
+    <div class="container">
+        <h1>Patient Dashboard Registration</h1>
+        <p>Enter your details to register for the Digital Health Wallet...</p>
 
-            </tr>
-        </table>
-    </form>
-    </font><br><br>
-    <div>
-     <img src="r1.jpeg" height="300" width="490"/>   
-     <img src="r2.jpeg" height="300" width="490"/>   
-     <img src="r3.jpeg" height="300" width="490"/>    
+        <form id="registrationForm">
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" required>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" required>
+            </div>
+            <div class="form-group">
+                <label>Phone:</label>
+                <input type="tel" required>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <div>
+                    <input type="radio" name="gender" value="male" checked> Male
+                    <input type="radio" name="gender" value="female"> Female
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Region:</label>
+                <textarea rows="4" placeholder="Enter address..."></textarea>
+            </div>
+            <button type="submit" style="width:100%; padding:15px; cursor:pointer;">Register</button>
+        </form>
+
+        <div class="gallery">
+            <img src="r1.jpeg" alt="Service 1">
+            <img src="r2.jpeg" alt="Service 2">
+            <img src="r3.jpeg" alt="Service 3">
+            <img src="r4.jpeg" alt="Service 4">
+            <img src="r5.jpeg" alt="Service 5">
+            <img src="r2.jpeg" alt="Service 6">
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="window.location.href='index.html'">Back to Home</button>
+        </div>
     </div>
     
-    <div>
-     <img src="r4.jpeg" height="300" width="490"/>   
-     <img src="r5.jpeg" height="300" width="490"/>   
-     <img src="r2.jpeg" height="300" width="490"/>    
-    </div>
-    <button onclick="window.location.href='index.html'">Back to Home</button></center>
-
-    <footer><center><font size="4">Copyright © 2024 Digital Health Wallet. All rights reserved.</font></center>
+    <footer>
+        <center><p>Copyright © 2024 Digital Health Wallet.</p></center>
+    </footer>
 </body>
 </html>
