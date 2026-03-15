@@ -9,7 +9,7 @@
     .index-bg{background-image: url('ind1.jpg');
         background-size: cover;
         background-position: center;
-        height: 100vh;   
+        min-height: 100vh;   /* Changed to min-height for scrolling */
     }
     .l1{
         background-color: rgba(255, 255, 255, 0.15); 
@@ -18,7 +18,7 @@
         border-radius: 20px;
         padding: 20px;
         color: #0f5802;
-        font-size: 50px;
+        font-size: clamp(24px, 8vw, 50px); /* Responsive font size */
         font-family: "Times New Roman", Times, serif;
     }
     .l2{    
@@ -27,9 +27,10 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 20px;
         padding: 20px;
-        font-size: 20px;
+        font-size: 18px;
         font-family: "Times New Roman", Times, serif;
         color: #10100f;
+        margin: 10px;
     }
     .health-navbar {
         background-color: #beaf23;
@@ -40,23 +41,13 @@
         box-shadow: 0 2px 5px rgba(224, 92, 92, 0.1);
         position: fixed;
         top: 0;
+        left: 0;
+        width: 100%;
         z-index: 1000;
     }
 
-    .nav-logo {
-        font-size: 22px;
-        font-weight: bold;
-        color: #090909;
-        text-decoration: none;
-    }
-
-    .nav-links {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 40px;
-    }
+    .nav-logo { font-size: 22px; font-weight: bold; color: #090909; text-decoration: none; }
+    .nav-links { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
 
     .nav-links a {
         text-decoration: none;
@@ -67,68 +58,48 @@
         background-color: rgb(240, 216, 124);
         transition: background-color 0.3s;
     }
-    .nav-links a:hover {
-        background-color: #e8f5e9;
-        color: #04AA6D;
-    }
-
-    .nav-links a.active {
-        background-color: #04AA6D;
-        color: white;
-    }
+    
     @media screen and (max-width: 600px) {
-    table, thead, tbody, th, td, tr {
-        display: block; 
-        width: 100%;
+        .nav-links { gap: 5px; }
+        .nav-links a { font-size: 12px; padding: 5px; }
     }
-    td {
-        padding: 5px 0;
-    }
-    h1 { font-size: 2rem !important; }
-    p { font-size: 1rem !important; }
-}
 </style>
 </head>
 <body class="index-bg">
-    <nav class="health-navbar" style="width: 100%;">
-    <a href="#" class="nav-logo">🛡️ DHW</a>
-    <ul class="nav-links">
-        <li><a href="client.html">Register</a></li>
-        <li><a href="doctor.html">Doctor</a></li>
-    </ul>
+    <nav class="health-navbar">
+        <a href="#" class="nav-logo">🛡️ DHW</a>
+        <ul class="nav-links">
+            <li><a href="client.html">Register</a></li>
+            <li><a href="doctor.html">Doctor</a></li>
+        </ul>
     </nav>
 
     <div class="l1" style="margin-top: 80px; text-align: center;">
-    Welcome to Digital Health Wallet
+        Welcome to Digital Health Wallet
     </div>
-    <br><br><br><br><br><br><br><br>
-    <p class="l2"> Portal where doctors can Access patient information and manage your appointments.Digital Health Wallet is an online platform used by doctors to access general
-    information and past history of patients via web app.It was made and developed especially for the rural
-    areas where there is no network connectivity. It allows doctors to access patient information and manage appointments even in areas with limited or no internet access.</p>
-    <br><br><br><br>
-    <div >
-     <img src="r1.jpeg" class="I1" height="300" width="490"/>   
-     <img src="r2.jpeg" class="I1" height="300" width="490"/>   
-     <img src="r3.jpeg" class="I1" height="300" width="490"/>    
+
+    <p class="l2">Portal where doctors can Access patient information and manage your appointments. Digital Health Wallet is an online platform used by doctors to access general information and past history of patients via web app.</p>
+
+    <div class="image-container">
+        <img src="r1.jpeg" class="I1" />   
+        <img src="r2.jpeg" class="I1" />   
+        <img src="r3.jpeg" class="I1" />    
+        <img src="r4.jpeg" class="I1" />   
+        <img src="r5.jpeg" class="I1" />   
+        <img src="r2.jpeg" class="I1" />    
     </div>
-    <div>
-     <img src="r4.jpeg" class="I1" height="300" width="490"/>   
-     <img src="r5.jpeg" class="I1" height="300" width="490"/>   
-     <img src="r2.jpeg" class="I1" height="300" width="490"/>    
+
+    <div style="overflow-x: auto; width: 100%; display: flex; justify-content: center;">
+        <table border="1" style="background: #000; font-size: 16px; color: #f3f5ef; width: 90%;">
+            <tr>
+                <td rowspan ="3" align="center" bgcolor="grey">Contact us:</td>
+                <td>Email: <a style="color: #04AA6D;" href="mailto:digitalhealthwallet@gmail.com">digitalhealthwallet@gmail.com</a></td>
+            </tr>
+            <tr><td>LinkedIn: <a style="color: #04AA6D;" href="#">digitalhealthwallet</a></td></tr>
+            <tr><td>Instagram: <a style="color: #04AA6D;" href="#">digitalhealthwallet_NPH</a></td></tr>
+        </table>
     </div>
-    <table border="1" style="background: #000;font-size: 20px; color: #f3f5ef;">
-        <tr>
-            <td rowspan ="4" align="center" bgcolor="grey">Contact us:</td>
-            <td>Email us at :<a style="color: #04AA6D;" href="mailto:digitalhealthwallet@gmail.com">  digitalhealthwallet@gmail.com</a></td>
-        </tr>
-         <tr>
-            <td>LinkedIn: <a style="color: #04AA6D;"href="https://www.linkedin.com/company/digital-health-wallet">digitalhealthwallet</a></td>
-        </tr>
-         <tr>
-            <td>Instagram : <a style="color: #04AA6D;"href="https://www.instagram.com/digitalhealthwallet">digitalhealthwallet_NPH</a></td>
-        </tr>
-    </table>>
-    <footer><center><b><font size="4" style="color: #eff0ec;">Copyright © 2024 Digital Health Wallet. All rights reserved.</font></center></b></footer>
     
+    <footer><center><b><p style="color: #eff0ec; font-size: 14px;">Copyright © 2024 Digital Health Wallet.</p></b></center></footer>
 </body>
 </html>
